@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mini Shooter cu Baloane - Mobile</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="game-container">
+    <div id="game">
+      <div id="background"></div>
+      <div id="player"></div>
+      <div id="score">Scor: 0</div>
+      <div id="level">Nivel: 1</div>
+    </div>
+    
+    <!-- Control tactil mobil -->
+    <div id="mobile-controls">
+      <button id="leftBtn">⬅</button>
+      <button id="shootBtn">🔥</button>
+      <button id="rightBtn">➡</button>
+    </div>
+
+    <div id="controls">
+      <button id="startBtn">Start</button>
+      <button id="stopBtn">Stop</button>
+    </div>
+  </div>
+
+  <!-- Sunete -->
+  <audio id="popSound" src="pop.mp3"></audio>
+  <audio id="shootSound" src="shoot.mp3"></audio>
+  <audio id="powerupSound" src="powerup.mp3"></audio>
+
+  <script src="script.js"></script>
+</body>
+</html>

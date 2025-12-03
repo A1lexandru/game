@@ -1,0 +1,145 @@
+body {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  font-family: sans-serif;
+  background: #87ceeb;
+}
+
+#game-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+#game {
+  position: relative;
+  width: 600px;
+  height: 400px;
+  overflow: hidden;
+  border: 3px solid #000;
+  margin-bottom: 10px;
+}
+
+#background {
+  position: absolute;
+  width: 200%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background: linear-gradient(to top, #87ceeb 0%, #fff 100%);
+  animation: moveBg 20s linear infinite;
+  z-index: -1;
+}
+
+@keyframes moveBg {
+  0% { left: 0; }
+  100% { left: -100%; }
+}
+
+#player {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 50px;
+  height: 50px;
+  background-color: red;
+  border-radius: 50%;
+  z-index: 10;
+}
+
+.bullet {
+  position: absolute;
+  width: 10px;
+  height: 20px;
+  background-color: yellow;
+  border-radius: 5px;
+}
+
+.balloon {
+  position: absolute;
+  width: 40px;
+  height: 60px;
+  border-radius: 50%;
+  border: 2px solid white;
+}
+
+.powerup {
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  background-color: cyan;
+  border-radius: 50%;
+  border: 2px solid white;
+}
+
+#score, #level {
+  position: absolute;
+  top: 10px;
+  font-size: 24px;
+  color: white;
+  z-index: 20;
+}
+
+#score { left: 10px; }
+#level { right: 10px; }
+
+#controls {
+  margin-top: 5px;
+}
+
+#mobile-controls {
+  position: absolute;
+  bottom: 10px;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  z-index: 30;
+}
+
+#mobile-controls button {
+  font-size: 24px;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  opacity: 0.7;
+}
+
+button {
+  font-size: 16px;
+  padding: 5px 10px;
+  margin: 0 5px;
+  cursor: pointer;
+}
+
+/* Efect particule */
+.pop {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  pointer-events: none;
+  animation: popAnim 0.5s forwards;
+}
+
+@keyframes popAnim {
+  0% { transform: scale(1); opacity: 1; }
+  100% { transform: scale(2); opacity: 0; }
+}
+
+/* Responsive scaling pentru mobile */
+@media (max-width: 700px) {
+  #game {
+    width: 95%;
+    height: 60vh;
+  }
+  #player { width: 10%; height: 10%; }
+  .bullet { width: 2%; height: 5%; }
+  .balloon { width: 6%; height: 10%; }
+  .powerup { width: 5%; height: 5%; }
+}
